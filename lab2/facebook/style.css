@@ -1,0 +1,145 @@
+body {
+    background-color: #e3e7f1;
+}
+#logo {
+    width: 240px;
+    height: 90px;
+}
+#text {
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main {
+    padding: 150px 270px;
+}
+.left {
+    float: left;
+}
+.login {
+    position: relative;
+    right: -80px;
+}
+.elements {
+    margin: 5px;
+}
+.in {
+    width: 350px;
+    height: 50px;
+    font-size: 15px;
+    border-color: #f7f7f7;
+    border-radius: 8px;
+    border-width: 0.5px;
+}
+#login_button {
+    width: 350px;
+    height: 50px;
+    background-color:rgb(24, 119, 242);
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    border-color: #f7f7f7;
+    border-radius: 8px;
+    border-width: 0.5px;
+}
+.form {
+    position: relative;
+    background-color: white;
+    width: 350px;
+    height: 350px;
+    border-color: #d5cccc;
+    border-radius: 8px;
+    border-width: 0.5px;
+}
+#forget {
+    color: rgb(24, 119, 242);
+    text-decoration: none;
+    padding-left: 105px;
+    font-size: 16px;
+}
+.line {
+    border-bottom: 1px solid rgb(105, 104, 104);
+    border-color: #d5cccc;
+}
+#create {
+    position: absolute;
+    background-color: rgb(37, 179, 37);
+    width: 230px;
+    height: 50px;
+    left: 75px;
+    font-size: 15px;
+    color: white;
+    font-weight: bolder;
+    border-color: white;
+    border-radius: 8px;
+    border-width: 0.5px;
+}
+#reg {
+    text-decoration: none;
+    color: white;
+}
+p#page {
+    padding-left: 525px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+}
+a#page {
+    color: black;
+    text-decoration: none;
+}
+.footer {
+    background-color: white;
+    height: 170px;
+}
+.down li {
+    display: inline;
+}
+.down {
+    padding-top: 17px;
+    padding-left: 268px;
+    color:rgb(105, 104, 104);
+    font-size: 11.5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.lan {
+    margin: 5px;
+}
+#plus {
+    position: relative;
+    width: 33px;
+    height: 22px;
+    border: 2px ridge;
+    border-radius: 2px;
+    border-width: 0.5px;
+    border:#d5cccc;
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(105, 104, 104);
+    top: 3px
+}
+#line2 {
+    position: relative;
+    left: 270px;
+    width: 1000px;
+    border-bottom: 1px solid rgb(105, 104, 104);
+    border-color: #d5cccc;
+}
+.down2 {
+    padding-left: 260px;
+    color:rgb(105, 104, 104);
+    margin: 4px;
+    font-size: 11.5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.down2 li {
+    display: inline;
+}
+.settings {
+    margin: 10px;
+}
+#Meta {
+    padding-left: 275px;
+    color:rgb(105, 104, 104);
+    font-size: 11.5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
