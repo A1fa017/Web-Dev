@@ -26,33 +26,37 @@ addButton.addEventListener('click', function(event) {
 function displayMessages() {
 
     let displayMessage = ``;
-
     toDoList.forEach(function(item, i){
-
         displayMessage += `
         <li>
             <input type="checkbox" class="check" id=item_${i} ${item.checked ? 'checked':''}>
-            <span class="close">x</span>
+            <button class="close" id='item_${i}'>x</button>
             <label class="message" for=item_${i}>${item.toDo}</label> 
         </li>
         `;
-        toDo.innerHTML = displayMessage;
     }
     );
+    toDo.innerHTML = displayMessage;
 }
 
-toDo.addEventListener('change', function(event){
+toDo.addEventListener('click', function(event){
 
-    let idInput = event.target.getAttribute('id');
+    let target = event.target;
+    let idInput = target.getAttribute('id');
     let valueLabel = toDo.querySelector('[for='+idInput+']').innerHTML;
 
-    toDoList.forEach(function(item) {
+    toDoList.forEach(function(item, i) {
 
         if(item.toDo === valueLabel) {
-            item.checked = !item.checked;
+            if(target.tagName === 'BUTTON') {
+                toDoList.splice(i, 1);
+            }
+            else {
+                item.checked = !item.checked;
+            }
             localStorage.setItem('todo', JSON.stringify(toDoList));
         }
-
     });
+    displayMessages();
 
 })

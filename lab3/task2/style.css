@@ -49,11 +49,22 @@
 }
 ul {
     list-style-type: none;
-    /* background-color: rgb(129, 120, 120); */
+    background-color: rgb(129, 120, 120);
+    color: white;
 }
 .close {
     position: relative;
     left: 730px;
-    color: rgb(129, 120, 120);
+    color: white;
     font-family: cursive;
+    border: white;
+    background-color: rgb(129, 120, 120);
+}
+li label.checked {
+    color:  #888;
+    text-decoration: line-through;
+}
+.check {
+    position: relative;
+    top: 2px;
 }
