@@ -14,7 +14,8 @@ addButton.addEventListener('click', function(event) {
 
     let newTodo = {
         toDo : addMessage.value,
-        checked : false
+        checked : false,
+        class : 'message'
     }
 
     toDoList.push(newTodo);
@@ -28,10 +29,10 @@ function displayMessages() {
     let displayMessage = ``;
     toDoList.forEach(function(item, i){
         displayMessage += `
-        <li>
-            <input type="checkbox" class="check" id=item_${i} ${item.checked ? 'checked':''}>
+        <li id='${i}'>
+            <input type="checkbox" class="check" id='${i}' ${item.checked ? 'checked':''}>
             <button class="close" id='item_${i}'>x</button>
-            <label class="message" for=item_${i}>${item.toDo}</label> 
+            <label class="${item.class}" for=item_${i}>${item.toDo}</label> 
         </li>
         `;
     }
@@ -43,20 +44,15 @@ toDo.addEventListener('click', function(event){
 
     let target = event.target;
     let idInput = target.getAttribute('id');
-    let valueLabel = toDo.querySelector('[for='+idInput+']').innerHTML;
 
-    toDoList.forEach(function(item, i) {
+    if(target.tagName === 'INPUT') {
+        toDoList[idInput].checked = !toDoList[idInput].checked;
+        if(toDoList[idInput].checked) toDoList[idInput].class = 'checked';
+        else toDoList[idInput].class = 'message';
+    }else if(target.tagName === 'BUTTON'){
+        toDoList.splice(idInput, 1);
+    }
 
-        if(item.toDo === valueLabel) {
-            if(target.tagName === 'BUTTON') {
-                toDoList.splice(i, 1);
-            }
-            else {
-                item.checked = !item.checked;
-            }
-            localStorage.setItem('todo', JSON.stringify(toDoList));
-        }
-    });
+    localStorage.setItem('todo', JSON.stringify(toDoList));
     displayMessages();
-
 })
