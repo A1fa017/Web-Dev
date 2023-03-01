@@ -11,14 +11,18 @@
 </h3>
   <img src="{{product.img}}" class="images">
   <p>Price: ${{ product.price }}</p>
+  <a class="like" (click)="like(product)">❤ </a>{{product.like}}
 <!-- <p *ngIf="product.description">
   Description: {{ product.description }}
 </p> -->
 
-<button type="button" (click)="share()">
+<!-- <button type="button" (click)="share()">
   Share
-</button>
-
+</button> -->
+<a target="_blank" style = "position: relative;" href='https://t.me/share/url?url={{product.link}}&text={Share by telegram}'> 
+  <button class="share">Share on Telegram</button> 
+</a> 
+<button class="remove" (click)="removeItem(product.id)">Delete</button>
 <app-product-alerts
   [product]="product" 
   (notify)="onNotify()">
