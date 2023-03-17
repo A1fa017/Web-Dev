@@ -1,4 +1,4 @@
-<<<<<<<< HEAD:lab4/src/app/product-list/product-list.component.ts
+
 import { Component } from '@angular/core';
 
 import { products } from '../products';

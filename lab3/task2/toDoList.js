@@ -43,6 +43,7 @@ function displayMessages() {
 toDo.addEventListener('click', function(event){
 
     let target = event.target;
+    console.log(target)
     let idInput = target.getAttribute('id');
 
     if(target.tagName === 'INPUT') {
@@ -50,6 +51,7 @@ toDo.addEventListener('click', function(event){
         if(toDoList[idInput].checked) toDoList[idInput].class = 'checked';
         else toDoList[idInput].class = 'message';
     }else if(target.tagName === 'BUTTON'){
+        // console.log(toDoList[idInput].addMessage)
         toDoList.splice(idInput, 1);
     }
 
