@@ -1,6 +1,7 @@
 from django.db import models
 
 class Product(models.Model):
+    category_id = models.IntegerField()
     name = models.CharField(max_length=255)
     price = models.FloatField()
     description = models.TextField()
@@ -19,7 +20,6 @@ class Product(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
-    product_id = models.IntegerField()
 
     def to_json(self):
         return{
