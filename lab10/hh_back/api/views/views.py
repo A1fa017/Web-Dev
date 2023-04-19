@@ -1,5 +1,6 @@
 from django.http.response import JsonResponse
 from api.models import Company, Vacancy
+from api.serializers import CompanySerializer, VacancySerializer
 
 def company_list(request):
     companies = Company.objects.all()
