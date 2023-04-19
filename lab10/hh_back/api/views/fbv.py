@@ -40,7 +40,6 @@ def company_detail(request, company_id):
         company.delete()
         return Response({'deleted': True}, status=status.HTTP_200_OK)
 
-
 @api_view(['GET', 'POST'])
 def vacancy_list(request):
     if request.method == 'GET':

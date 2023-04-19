@@ -40,6 +40,7 @@ class CompanyDetailAPIView(APIView):
         company = self.get_object(company_id)
         company.delete()
         return Response({'delete':True})
+
 class VacancyListAPIView(APIView):
     def get(self, request):
         vacancies = Vacancy.objects.all()
@@ -51,6 +52,7 @@ class VacancyListAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class VacancyDetailAPIView(APIView):
     def get_object(self, vacancy_id):
         try:
