@@ -72,3 +72,13 @@ def vacancy_detail(request, vacancy_id):
     elif request.method == 'DELETE':
         vacancy.delete()
         return Response({'delete':True}, status=status.HTTP_200_OK)
+    
+@api_view(['GET'])
+def company_vacancies(request, company_id):
+    try:
+        company = Company.objects.get(id=company_id)
+    except Company.DoesNotExist as e:
+        return Response({'error':str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    vacancies = company.vacancies.all()
+    serializer = VacancySerializer(vacancies, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)

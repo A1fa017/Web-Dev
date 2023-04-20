@@ -74,3 +74,16 @@ class VacancyDetailAPIView(APIView):
         vacancy = self.get_object(vacancy_id)
         vacancy.delete()
         return Response({'delete':True}, status=status.HTTP_200_OK)
+
+class CompanyVacanciesAPIView(APIView):
+    def get_object(self, company_id):
+        try:
+            return Company.objects.get(id=company_id)
+        except Company.DoesNotExist as e:
+            raise Http404
+
+    def get(self, request, company_id):
+        company = self.get_object(company_id)
+        vacancies = company.vacancies.all()
+        serializer = VacancySerializer(vacancies, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
